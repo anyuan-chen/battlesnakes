@@ -4,7 +4,7 @@ import os
 from flask import Flask
 from flask import request
 
-import logic
+import logic.main_logic as main_logic
 
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def handle_info():
     See https://docs.battlesnake.com/guides/getting-started#step-4-register-your-battlesnake
     """
     print("INFO")
-    return logic.get_info()
+    return main_logic.get_info()
 
 
 @app.post("/start")
@@ -42,7 +42,7 @@ def handle_move():
     data = request.get_json()
 
     # TODO - look at the logic.py file to see how we decide what move to return!
-    move = logic.choose_move(data)
+    move = main_logic.choose_move(data)
 
     return {"move": move}
 
