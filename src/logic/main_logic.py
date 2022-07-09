@@ -39,7 +39,7 @@ def choose_move(data: dict) -> str:
     possible_moves = avoid_other_snakes(my_body, data["board"]["snakes"])
     possible_moves = avoid_walls(my_head, possible_moves, data["board"])
     possivle_moves = avoid_my_body(my_body, possible_moves)
-    
+
     # TODO: Step 4 - Find food.
     # Use information in `data` to seek out and find food.
     # food = data['board']['food']
